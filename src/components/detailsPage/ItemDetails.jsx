@@ -22,9 +22,8 @@ function ItemDetails() {
     />
   ));
   return (
-    <div style={{border:"2px green solid"}}>
+    <div >
       {product.length === 0 ? <Navigate to="/" replace={true} /> : display}
-      {/* {!location.state.id ? <Navigate to="/" replace={true} /> : display} */}
 
     </div>
   );

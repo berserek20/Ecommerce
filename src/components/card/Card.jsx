@@ -20,9 +20,9 @@ function Card({ id, source, title, rating, price }) {
       </div>
       <div className="grid grid-cols-1">
 
-        <div>title: {title}</div>
-        <div>rating:{rating}</div>
-        <div>price:${price}</div>
+              <p> Title: {title}</p>
+              <p>Rating: {rating}</p>
+              <p>Price: ${price}</p>
       </div>
     </div>
   );
