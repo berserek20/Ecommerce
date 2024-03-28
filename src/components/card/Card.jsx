@@ -10,12 +10,13 @@ function Card({ id, source, title, rating, price }) {
         width: "300px",
         border: "2px solid black",
         cursor: "pointer",
+        margin:"auto"
       }}
       onClick={() => {
         navigate("/details", { state: { id: id } });
       }}>
-      <div className="flex justify-evenly" style={{border:"2px solid red", height:"50%",width:"100%"}}>
-        <img src={source} alt="" style={{ height: "100%", width: "60%", border:"2px solid blue"}} />
+      <div className="flex justify-evenly" style={{ height:"50%",width:"100%"}}>
+        <img src={source} alt="" style={{ height: "100%", width: "60%"}} />
       </div>
       <div className="grid grid-cols-1">
 

@@ -39,13 +39,7 @@ function Main() {
       </div>
      
       <div
-        class="grid mx-1 my-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-        style={{
-        
-          border: "2px solid white",
-         
-        }}
-      >
+        className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {sortedProducts.map((e) => {
           return (
             <Card

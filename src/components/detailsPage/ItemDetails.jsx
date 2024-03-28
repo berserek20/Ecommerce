@@ -23,7 +23,9 @@ function ItemDetails() {
   ));
   return (
     <div style={{border:"2px green solid"}}>
-      {product.length === 0 || location.state.id ===null ? <Navigate to="/" replace={true} /> : display}
+      {product.length === 0 ? <Navigate to="/" replace={true} /> : display}
+      {/* {!location.state.id ? <Navigate to="/" replace={true} /> : display} */}
+
     </div>
   );
 }

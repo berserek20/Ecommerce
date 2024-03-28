@@ -6,7 +6,7 @@ import Nav from "./components/main/Nav";
 
 function App() {
   return (
-    <div className="App" style={{border:"2px solid yellow",width:"100vw"}}>
+    <div className="App" >
       <Nav />
       <BrowserRouter>
         <Routes>

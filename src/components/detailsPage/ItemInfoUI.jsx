@@ -3,8 +3,8 @@ import React from 'react'
 function ItemInfoUI({source,title,desc,rating,price,count}) {
   return (
     <div>
-         <div className='grid grid-cols-1 md:grid-cols-2' style={{border:"2px solid red"}}>
-            <div className='flex justify-evenly' style={{height:"50%",border:"2px solid green"}}><img src={source} alt=''style={{height:"100%", width:"50%", border:"2px solid yellow"}} /></div>
+         <div className='md:grid md:grid-cols-2'>
+            <div className='flex justify-evenly' ><img src={source} alt=''style={{height:"100%", width:"50%",}} /></div>
             <div style={{border:"2px solid blue"}}>
 
               title:<p>{title}</p>
