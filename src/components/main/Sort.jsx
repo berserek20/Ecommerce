@@ -18,8 +18,8 @@ function Sort() {
   return (
     <div>
             <label htmlFor='selectedSort'>Sort: </label>
-            <select id='selectedSort' onChange={(e)=>{setSortType(e)}} >
-                <option value="">-- Select --</option>
+            <select  id='selectedSort' onChange={(e)=>{setSortType(e)}} style={{border:"2px solid black"}}>
+                <option  value="">-- Select --</option>
                 <option  value="Lowest">Price:Low to high</option>
                 <option value="highest">Price:high to Low</option>
                 <option value="a2z">a-z</option>
