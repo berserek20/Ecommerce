@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Card from "../card/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { addProducts } from "../../features/products/productSlice";
 import Sort from "./Sort";
 import { ResponseSorting } from "./ResponseSorting";
+import Category from "./Category";
 
 function Main() {
   const [products, setProducts] = useState([]);
@@ -38,77 +38,11 @@ function Main() {
         <Sort />
       </div>
 
-      <p className="bg-purple-300">Men's Clothing</p>
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {sortedProducts
-          .filter((e) => e.category === "men's clothing")
-          .map((e) => {
-            return (
-              <Card
-                key={e.id}
-                id={e.id}
-                source={e.image}
-                title={e.title}
-                rating={e.rating.rate}
-                price={e.price}
-              />
-            );
-          })}
-      </div>
-      <p className="bg-purple-300">Electronics</p>
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {sortedProducts
-          .filter((e) => e.category === "electronics")
-          .map((e) => {
-            return (
-              <Card
-                key={e.id}
-                id={e.id}
-                source={e.image}
-                title={e.title}
-                rating={e.rating.rate}
-                price={e.price}
-              />
-            );
-          })}
-      </div>
+     <Category sortedProducts={sortedProducts} category="Men's Clothing" />
+     <Category sortedProducts={sortedProducts} category="Women's Clothing" />
+     <Category sortedProducts={sortedProducts} category="Jewelery" />
+     <Category sortedProducts={sortedProducts} category="Electronics" />
 
-      <p className="bg-purple-300">jewelery</p>
-
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {sortedProducts
-          .filter((e) => e.category === "jewelery")
-          .map((e) => {
-            return (
-              <Card
-                key={e.id}
-                id={e.id}
-                source={e.image}
-                title={e.title}
-                rating={e.rating.rate}
-                price={e.price}
-              />
-            );
-          })}
-      </div>
-
-      <p className="bg-purple-300">Women's Clothing</p>
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {sortedProducts
-          .filter((e) => e.category === "women's clothing")
-          .map((e) => {
-            return (
-              <Card
-                key={e.id}
-                id={e.id}
-                source={e.image}
-                title={e.title}
-                rating={e.rating.rate}
-                price={e.price}
-              />
-            );
-          })}
-      </div>
     </>
   );
 }

@@ -8,10 +8,10 @@ function Card({ id, source, title, rating, price }) {
       <div  style={{
         height: "400px",
         width: "300px",
-        border: "2px solid black",
+        // border: "2px solid black",
         cursor: "pointer",
         margin:"auto",
-        borderRadius:"10%"
+        // borderRadius:"10%"
       }}
       onClick={() => {
         navigate("/details", { state: { id: id } });
