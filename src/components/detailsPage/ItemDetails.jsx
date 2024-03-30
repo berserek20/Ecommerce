@@ -1,30 +1,47 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { Navigate, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import ItemInfoUI from "./ItemInfoUI";
 
 function ItemDetails() {
-  const location = useLocation();
-  const item = useSelector((state) => state.product);
-  // const navigate = useNavigate();
-  console.log(location.state.id, " \n  ");
-  const product = item.filter((e) => location.state.id === e.id);
-  console.log("product", product);
-  const display = product.map((e) => (
-    <ItemInfoUI
-      key={e.id}
-      source={e.image}
-      title={e.title}
-      desc={e.description}
-      rating={e.rating.rate}
-      price={e.price}
-      count={e.rating.count}
-    />
-  ));
-  return (
-    <div >
-      {product.length === 0 ? <Navigate to="/" replace={true} /> : display}
+  const { id } = useParams();
+  const [item, setItem] = useState(undefined);
+  // const item = useSelector((state) => state.product);
+  // const product = item.filter((e) => parseInt(id) === e.id);
+  useEffect(() => {
+    async function findProducts() {
+      try {
+        const arr = await fetch(`https://fakestoreapi.com/products/${id}`);
+        const response = await arr.json();
 
+        if (response === null) {
+          console.log("error occured");
+        } else {
+          setItem(response);
+        }
+      } catch (e) {
+        console.log("error", e);
+      }
+    }
+
+    findProducts();
+    // eslint-disable-next-line
+  }, []);
+  const display = (
+    item ?<ItemInfoUI
+      // key={item.id ?? 0}
+      source={item.image ?? ""}
+      title={item.title ?? "" }
+      desc={item.description ?? ""}
+      rating={item.rating?.rate?? 0}
+      price={item.price ?? 0}
+      count={item.rating?.count?? 0}
+    /> : <h1>Loading...</h1>
+  );
+
+  return (
+    <div>
+      {display}
+      
     </div>
   );
 }

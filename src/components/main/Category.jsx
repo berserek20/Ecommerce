@@ -11,10 +11,10 @@ function Category({sortedProducts,category}) {
             <Card
               key={e.id}
               id={e.id}
-              source={e.image}
-              title={e.title}
-              rating={e.rating.rate}
-              price={e.price}
+              source={e.image ?? ""}
+              title={e.title ?? ""}
+              rating={e.rating?.rate ?? 0}
+              price={e.price ?? 0}
             />
           );
         })}

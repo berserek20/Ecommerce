@@ -10,6 +10,7 @@ const productSlice = createSlice({
             state=action.payload;
             return state;
         }
+      
     }
 })
 export const {addProducts} = productSlice.actions;

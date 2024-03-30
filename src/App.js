@@ -10,15 +10,17 @@ import Login from "./components/Credentials/Login";
 
 function App() {
   return (
-    <div className="App" >
+    <div className="App bg-gray-100">
         <Nav />
+
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/details" element={<ItemDetails />} />
+          <Route path="/details/:id" element={<ItemDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/about" element={<About />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+
 
         </Routes>
     
