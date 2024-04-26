@@ -7,8 +7,11 @@ import Category from "./Category";
 
 function Main() {
   const [products, setProducts] = useState([]);
+
   const dispatch = useDispatch();
   const sorttype = useSelector((state) => state.sort);
+
+ 
 
   useEffect(() => {
     async function findProducts() {
@@ -37,12 +40,13 @@ function Main() {
       <div>
         <Sort />
       </div>
-
-     <Category sortedProducts={sortedProducts} category="Men's Clothing" />
-     <Category sortedProducts={sortedProducts} category="Women's Clothing" />
-     <Category sortedProducts={sortedProducts} category="Jewelery" />
-     <Category sortedProducts={sortedProducts} category="Electronics" />
-
+      {sortedProducts? <div>
+          <Category sortedProducts={sortedProducts} category="Men's Clothing" />
+          <Category sortedProducts={sortedProducts} category="Women's Clothing" />
+          <Category sortedProducts={sortedProducts} category="Jewelery" />
+          <Category sortedProducts={sortedProducts} category="Electronics" />
+        </div>:<h1 className=" text-2xl text-rose-500">Loading....</h1>
+}
     </>
   );
 }

@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import {enableMapSet} from 'immer'
+enableMapSet();
 const initialState="normal";
 
 const sortSlice = createSlice({

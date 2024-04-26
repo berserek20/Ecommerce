@@ -35,7 +35,7 @@ function ItemDetails() {
       rating={item.rating?.rate?? 0}
       price={item.price ?? 0}
       count={item.rating?.count?? 0}
-    /> : <h1>Loading...</h1>
+    /> : <h1 className=" text-2xl text-cyan-300">Loading...</h1>
   );
 
   return (

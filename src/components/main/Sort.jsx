@@ -16,7 +16,7 @@ function Sort() {
     }
    
   return (
-    <div>
+    <div >
             <label htmlFor='selectedSort'>Sort: </label>
             <select  id='selectedSort' onChange={(e)=>{setSortType(e)}} style={{border:"2px solid black"}}>
                 <option  value="">-- Select --</option>
